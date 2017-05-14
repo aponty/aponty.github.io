@@ -1,25 +1,146 @@
 <!DOCTYPE html>
 <html>
-<link type="text/css" rel="stylesheet" href="normalize.css" />
-
 <head>
+  <link type="text/css" rel="stylesheet" href="normalize.css" />
+  <link href="https://fonts.googleapis.com/css?family=Antic+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
 <title>Anson Pontynen</title>
+
 <style>
-  body {
+  header {
     text-align: center;
+    margin: 20px;
+    font-family: 'Crimson Text', serif;
+  }
+  h1 {
+    font-size: 70px;
+    font-weight: bold;
+    background: rgba(15,15,15,.65);
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+  h2 {
+    font-size: 16px;
+    background: rgba(15,15,15,.65);
+    padding: 0 0 5px 15px;
+    margin-top: 0px;
+  }
+  p {
+    font-family: 'Crimson Text', serif;
+    font-size: 16px;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+  .indented {
+    padding-left: 70px;
+  }
+  .double_indented {
+    padding-left: 110px;
+    font-size: 14px;
+  }
+  .intro {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 5px 0 0 15px;
+  }
+  #first {
+    background-image: url('images/canoe.jpg');
+    padding-bottom: 350px;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: left;
+    font-family:'Antic Slab', serif;
+    color: white;
+  }
+  #bodytext {
+    padding: 20px 0 40px 0;
+  }
+  #profile {
+    max-width: 250px;
+    text-align: center;
+    border-radius: 50px;
+  }
+  #floatingboxes {
+    text-align: center;
+    padding: 20px;
+    display: block;
+    position: relative;
+  }
+  .galleryphotos {
+    border-radius: 15px;
+    padding: 10px;
+  }
+  @media (min-width: 700px) {
+    #profile {
+      float: right;
+    }
   }
 </style>
 </head>
 
-
 <body>
-  <h1>Hello World</h1>
-  <p>I'm hosted with GitHub Pages.loremipsum dolor dfsjldkfjsla
-    sdflkjsflksjdflkjsdfa;ustoiuwepiorhqwelknf,msdts</p>
-<ul>
+<header id='first'>
+  <h1> Anson Pontynen </h1>
+  <h2> data analyst-climber-rider-aspiring developer </h2>
+</header>
+
+<div id='floatingboxes' >
+  <div>
+    <img id='profile' src='images/laugh_profile.jpg'/>
+  </div>
+  <div>
+    <p class='intro'>Hello! I'm Anson. A brief intro; </p>
+    <p>Education:</p>
+    <p class='indented'>
+      MA at King&#8217s College, London: Philosophy <br />
+      BA at University of Chicago: World Literature
+    </p>
+    <p> Work: </p>
+    <p class='indented'>
+      Data Analyst at Context Matters
+    </p>
+    <p class='double_indented'>
+      One of a three-person team that formed a successful analytics and consulting department
+    </p>
+		<p class='indented'>
+      Assistant Data Analyst at Context Matters
+    </p>
+  </div>
+</div>
+
+<header id='bodytext'>
+  <p>
+    I like problem solving and analytic thinking, and I&#8217m learning development so I can can do it
+    full-time in a wider varitey of contexts than offered in my current line of work. Beyond the resume,
+    I&#8217m an avid 3-7 times a week climber (schedule permitting) and budding motorcycle aficionado (I try to
+    keep an old Suzuki running, with moderate success). I like long walks on the beach and fluffy
+    or non-fluffy animals of every shape and size (though some cats are just rude). I have many
+    leather-bound books and my apartment smells of rich mahogany (or motor oil, close enough).
+  </p>
+</header>
+
+<div id="floatingboxes">
+  <img class='galleryphotos' src="images/font_climbing.jpg" alt="climbing in fontainbleau" height=300px/>
+  <img class='galleryphotos' src="images/alfie.jpg" alt="inquisitive Alfie" height =300px/>
+  <img class='galleryphotos' src="images/suzie.jpg" alt="sittin' on Suzie" height=300px />
+</div>
+
+<header id='contact'>
+  <p class= 'intro'>
+    Contact Information:
+  </p>
+  <p class= 'indented'>
+    Phone: 646-678-7514 <br />
+    Email: <a href='mailto:aponty@gmail.com'>aponty@gmail.com</a> <br />
+    Linkedin:<a href='https://linkedin.com/in/anson-pontynen-27791838'>Anson Pontynen</a> <br />
+    GitHub: <a href='https://github.com/aponty'>aponty</a>
+  </p>
+</header>
+
+<header>
   <a href="game_page.html">Try my Rock Dodger Game!</a>
-</ul>
+</header>
+
 </body>
-<script type="text/javascript" src="test.js">
-</script>
 </html>
