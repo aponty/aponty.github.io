@@ -1,0 +1,199 @@
+body {
+  background-color: white;
+  font-family: courier;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+
+.stats {
+  position: absolute;
+  height: 50px;
+  width: 150px;
+  display: block;
+  text-align: left;
+  right: 100px;
+  font-size: 12px;
+  padding-top: 2px;
+  display: none;
+}
+
+header {
+  font-size: 75px;
+}
+
+h2 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+p {
+  font-size: 13px;
+  font-style: italic;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  font-family: courier;
+  font-size: 13px;
+}
+
+button:active, button:focus {
+  outline: grey;
+}
+
+button.animate {
+  animation: buttonAnimation 1.5s;
+}
+
+.landing.animate {
+  animation: landingAnimation 1.5s;
+}
+
+.gamewindow.animate {
+  animation: gameWindowAnimation 1.5s;
+}
+
+@keyframes buttonAnimation {
+  0% {
+    height: 40px;
+    width: 61px;
+    font-size: 13px;
+  }
+  50% {
+    height: 40px;
+    width: 300px;
+    font-size: 13px;
+    border: none;
+  }
+  100% {
+    height: 100px;
+    width: 300px;
+    font-size: 80px;
+    border: none;
+  }
+}
+
+@keyframes landingAnimation {
+  0% {
+    color: black;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes gameWindowAnimation {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+.gamewindow {
+  height: 600px;
+  width: 800px;
+  margin: 50px auto;
+  background-color: white;
+  position: relative;
+  border: 2px solid black;
+  padding-right: 4px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.paddle {
+  position: absolute;
+  background-color: black;
+  height: 10px;
+  width: 125px;
+  top: 590px;
+  left: 0;
+  display: none;
+}
+
+.ball {
+  background: black;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 560px;
+  left: 0;
+  display: none;
+}
+
+.brick {
+  height: 50px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.asterisk {
+  width: 300px;
+}
+
+.percent {
+  width: 190px;
+}
+
+.amp {
+  width: 140px;
+}
+
+.hash {
+  width: 70px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 10px;
+  display: block;
+  padding-bottom: 5px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer .small-warning {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  footer {
+    font-size: 60px;
+    margin-top: 50px;
+    background: rgba(0, 0, 0, .8)
+  }
+  footer a {
+    display: none;
+  }
+  footer .small-warning {
+    display: block;
+    color: white;
+  }
+}
