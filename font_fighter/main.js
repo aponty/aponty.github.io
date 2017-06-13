@@ -1,7 +1,7 @@
 $(function() {
   // help with cleaning up oscilation logic from  here http://isaacsukin.com/news/2015/01/detailed-explanation-javascript-game-loops-and-timing
   //and keypress object and controlling everthing in a gameLogic fn set to interval here- https: //stackoverflow.com/questions/13538168/is-it-possible-to-make-jquery-keydown-respond-faster
-  var $gameFrame = $('.gamewindow')
+  var $gameFrame = $('.gamewindow');
   var paddle = document.querySelector('.paddle');
   var paddleLeft = 0;
   var paddleVelocity = 7; //ok to change a little
@@ -47,6 +47,7 @@ $(function() {
   var infiniteLevelSetBoardInt;
   var input;
   var spin = .75;
+  var scorePageDrawn = false
 
   $('input').keydown(function(x) { //jazzing up the imput box
     if (x.which === 13) {
@@ -149,7 +150,7 @@ $(function() {
         setBoard();
       }, 8000);
     }
-    var livesString = ""  //just asthetic. I like the lives being a string instead of a number
+    var livesString = "" //just asthetic. I like the lives being a string instead of a number
     for (var i = 0; i < lives; i++) {
       livesString += '@';
     }
@@ -317,29 +318,32 @@ $(function() {
   }
 
   function drawScorePage() {
-    $livesDisplay.text('Lives: DEAD');
-    if (input) localStorage[input] = score;
-    document.querySelectorAll('.brick').forEach(x => x.style.display = 'none');
-    document.querySelector('.paddle').style.display = 'none';
-    document.querySelector('.ball').style.display = 'none';
-    $('header').eq(1).text('YOUR SCORE: ' + score);
-    document.querySelector('.score').style.display = 'block';
-    var scoreList = []; // to order results from localStorage
-    for (var i in localStorage) {
-      scoreList.push([i, localStorage[i]])
+    if (scorePageDrawn === false) {
+      $livesDisplay.text('Lives: DEAD');
+      if (input) localStorage[input] = score;
+      document.querySelectorAll('.brick').forEach(x => x.style.display = 'none');
+      document.querySelector('.paddle').style.display = 'none';
+      document.querySelector('.ball').style.display = 'none';
+      $('header').eq(1).text('YOUR SCORE: ' + score);
+      document.querySelector('.score').style.display = 'block';
+      var scoreList = []; // to order results from localStorage
+      for (var i in localStorage) {
+        scoreList.push([i, localStorage[i]])
+      }
+      scoreList.sort((a, b) => b[1] - a[1])
+      scoreList.slice(0, 6).forEach(x => {
+        var $nameScore = $('<h2>');
+        $nameScore.text(x[0] + ": " + x[1]);
+        $('.score').append($nameScore)
+      })
+      var $reload = $('<button>');
+      $reload.text("<<back to start>>")
+      $reload.click(function() {
+        location.reload()
+      })
+      $gameFrame.append($reload)
+      scorePageDrawn = true;
     }
-    scoreList.sort((a, b) => b[1] - a[1])
-    scoreList.slice(0, 6).forEach(x => {
-      var $nameScore = $('<h2>');
-      $nameScore.text(x[0] + ": " + x[1]);
-      $('.score').append($nameScore)
-    })
-    var $reload = $('<button>');
-    $reload.text("<<back to start>>")
-    $reload.click(function() {
-      location.reload()
-    })
-    $gameFrame.append($reload)
   }
 
   function gameLoop() {
