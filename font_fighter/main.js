@@ -354,7 +354,6 @@ $(function() {
       moveAndBounceBall();
       ballPaddleCollisionCheck();
       ballBrickCollisionCheck();
-      drawScore();
     }
     requestAnimationFrame(gameLoop);
   };
