@@ -8,9 +8,9 @@ window.onload = () => {
             box: '100p'
         },
         //for debugging
-        // render: function(data) {
-        //     console.log(data.curTop)
-        // }
+        render: function(data) {
+            console.log(data.curTop)
+        }
     });
 
     skrollr.menu.init(scroll)
