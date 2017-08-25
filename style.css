@@ -26,7 +26,6 @@ nav.wrap {
 nav.header {
     background-color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
-    /*display: flex;*/
     justify-content: space-around;
     padding: 10px 0px;
     position: absolute;
@@ -231,5 +230,26 @@ nav a {
     }
     .description>p>a {
         font-size: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+    nav.header {
+        top: 75%;
+    }
+    .extra {
+        display: none;
+    }
+    .projbox>a {
+        display: none;
+    }
+    .description {
+        height: 100%;
+    }
+    .description>a {
+        font-size: 16px;
+    }
+    .description>p {
+        font-size: 15px;
     }
 }
