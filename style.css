@@ -78,7 +78,7 @@ nav a {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 100vw;
+    width: 110vw;
     text-align: center;
 }
 
@@ -139,6 +139,10 @@ nav a {
     overflow: hidden;
 }
 
+.invert {
+    text-align: right;
+}
+
 .projbox>a>img {
     height: 100%;
 }
@@ -189,21 +193,19 @@ nav a {
     * {
         font-size: 14px;
     }
-    #about-slide > .textbox {
+    #about-slide>.textbox {
         width: 80%;
     }
 }
 
 @media (max-width: 630px) {
-    #about-slide > .textbox {
+    #about-slide>.textbox {
         width: 95%;
     }
-
     .projbox {
         flex-wrap: wrap;
         margin: 0;
     }
-
     .invert {
         flex-wrap: wrap-reverse;
     }
@@ -220,7 +222,7 @@ nav a {
         height: 50%;
         padding: 5px;
     }
-    .description>p{
+    .description>p {
         padding: 0;
         margin: 0;
         font-size: 13px;
