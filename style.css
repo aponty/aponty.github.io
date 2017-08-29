@@ -98,7 +98,8 @@ nav a {
 }
 
 #header-slide .slide-background {
-    background-image: url('./assets/canoe.jpg')
+    background-image: url('./assets/canoe.jpg');
+    z-index: 20;
 }
 
 .textbox {
